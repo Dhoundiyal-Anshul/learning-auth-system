@@ -1,0 +1,22 @@
+{
+  "projects": [
+    {
+      "name": "frontend",
+      "rootDirectory": "./Frontend",
+      "framework": "create-react-app",
+      "buildCommand": "npm run build",
+      "outputDirectory": "build"
+    },
+    {
+      "name": "backend",
+      "rootDirectory": "./backend",
+      "buildCommand": "npm install",
+      "routes": [
+        {
+          "src": "/api/(.*)",
+          "dest": "backend/index.js"
+        }
+      ]
+    }
+  ]
+}
