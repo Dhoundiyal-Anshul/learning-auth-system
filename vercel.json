@@ -1,23 +1,21 @@
 {
-  "projects": [
+  "builds": [
     {
-      "name": "frontend",
-      "rootDirectory": "./Frontend",
-      "framework": "create-react-app",
-      "buildCommand": "npm run build",
-      "outputDirectory": "build"
+      "src": "Frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "Frontend/dist"
+      }
     },
     {
-      "name": "backend",
-      "rootDirectory": "./backend",
-      "buildCommand": "npm install",
-      "outputDirectory": "dist",
-      "routes": [
-        {
-          "src": "/api/(.*)",
-          "dest": "backend/index.js"
-        }
-      ]
+      "src": "backend/index.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/index.js"
     }
   ]
 }
