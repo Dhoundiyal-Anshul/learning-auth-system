@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 const apiUrl = import.meta.env.VITE_API_BASE_URL;
-
-// Example of using it in a fetch request
-fetch(`${apiUrl}/your-endpoint`)
-  .then((response) => response.json())
-  .then((data) => console.log(data))
-  .catch((error) => console.error("Error:", error));
-
+console.log("API URL:", apiUrl); // Should log the correct API URL
 export function Signupandlogin() {
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");

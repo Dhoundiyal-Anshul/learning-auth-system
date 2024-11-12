@@ -34,7 +34,7 @@ app.post(
         username: username,
         password: password,
       });
-      res.json({ link: "http://localhost:5173" });
+      res.json({ link: "https://learning-auth-system-frontend.onrender.com/" });
     } catch (error) {
       res.status(500).json({ msg: "Error creating user" });
     }
