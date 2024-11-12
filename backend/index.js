@@ -12,7 +12,7 @@ const { link } = require("fs");
 const { validateCredentials, userchecker } = require("./middleware");
 const { signupZOD } = require("./types");
 app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "https://your-frontend-url.onrender.com" }));
 
 app.post(
   "/signup",

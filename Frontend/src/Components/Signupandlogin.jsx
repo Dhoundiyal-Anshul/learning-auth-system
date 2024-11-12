@@ -1,4 +1,11 @@
 import React, { useState } from "react";
+const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
+// Example of using it in a fetch request
+fetch(`${apiUrl}/your-endpoint`)
+  .then((response) => response.json())
+  .then((data) => console.log(data))
+  .catch((error) => console.error("Error:", error));
 
 export function Signupandlogin() {
   const [username, setusername] = useState("");
@@ -7,7 +14,7 @@ export function Signupandlogin() {
     // Handle any action, like form submission or API call
 
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch(`${apiUrl}/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -30,7 +37,7 @@ export function Signupandlogin() {
   const handleActionOfCreation = async () => {
     // Handle any action, like form submission or API call
     try {
-      const response = await fetch("http://localhost:3000/signup", {
+      const response = await fetch(`${apiUrl}/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
